@@ -1,13 +1,14 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <Link class="navbar-brand" href="#">
           Navbar
-        </a>
+        </Link>
         <button
           class="navbar-toggler"
           type="button"
@@ -24,29 +25,29 @@ function Navbar() {
           {/* not workin margin lef 18 => 15.21 sec */}
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" to="/">
                 Home <span class="sr-only">(current)</span>
-              </a>
+              </Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" to="/about">
                 About
-              </a>
+              </Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" to="/contact">
                 Contact
-              </a>
+              </Link>
             </li>{" "}
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" to="/login">
                 Login
-              </a>
+              </Link>
             </li>{" "}
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" to="/signup">
                 Register
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
