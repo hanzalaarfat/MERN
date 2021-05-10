@@ -2,11 +2,12 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const authenticate = require("../middleware/authenticate");
 
 require("../db/con");
 const User = require("../model/user");
 
-router.post("/register", async (req, res) => {
+router.post("/signup", async (req, res) => {
   const { name, email, phone, work, password, cpassword } = req.body;
   if (!name || !email || !phone || !work || !password || !cpassword) {
     return res.status(422).json({ err: "plz filled properly" });
@@ -66,7 +67,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-router.post("/signina", async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     let token;
     const { email, password } = req.body;
@@ -96,6 +97,11 @@ router.post("/signina", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+});
+
+router.get("/about", authenticate, (req, res) => {
+  console.log("about page");
+  res.send("about page");
 });
 
 module.exports = router;

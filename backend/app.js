@@ -29,6 +29,6 @@ app.get("/signup", (req, res) => {
 });
 app.use(routes);
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log(`sarver started at port ${process.env.PORT} `);
 });

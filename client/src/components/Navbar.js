@@ -1,14 +1,15 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+// import logo from "../images/logo.jpg"; ///import images here
 
-function Navbar() {
+const Navbar = () => {
   return (
     <>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <Link class="navbar-brand" href="#">
-          Navbar
-        </Link>
+        <NavLink class="navbar-brand" to="#">
+          {/* <img src={logo} alt="logo" /> */}
+        </NavLink>
         <button
           class="navbar-toggler"
           type="button"
@@ -22,38 +23,41 @@ function Navbar() {
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          {/* not workin margin lef 18 => 15.21 sec */}
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <Link class="nav-link" to="/">
+              <NavLink className="nav-link" to="/">
                 Home <span class="sr-only">(current)</span>
-              </Link>
+              </NavLink>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" to="/about">
+              <NavLink className="nav-link" to="/about">
                 About
-              </Link>
+              </NavLink>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" to="/contact">
-                Contact
-              </Link>
-            </li>{" "}
+              <NavLink className="nav-link" to="/signup">
+                Signup
+              </NavLink>
+            </li>
             <li class="nav-item">
-              <Link class="nav-link" to="/login">
+              <NavLink className="nav-link" to="/login">
                 Login
-              </Link>
-            </li>{" "}
+              </NavLink>
+            </li>
             <li class="nav-item">
-              <Link class="nav-link" to="/signup">
-                Register
-              </Link>
+              <NavLink className="nav-link" to="/contact">
+                Contact
+              </NavLink>
             </li>
           </ul>
+          {/* <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form> */}
         </div>
       </nav>
     </>
   );
-}
+};
 
 export default Navbar;

@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 function About() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <h1>hellow world</h1>
     </>
   );

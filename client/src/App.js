@@ -1,40 +1,38 @@
 import React from "react";
-import Navbar from "./components/Navbar";
+import { Route } from "react-router-dom";
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Login from "./components/Login";
 
-function App() {
+const App = () => {
   return (
     <>
-      <Switch>
-        <Navbar />
-        {/* <Route exact path="/">
-          <Home />
-        </Route>
+      <Navbar />
+      <Route exact path="/">
+        <Home />
+      </Route>
 
-        <Route path="/about">
-          <About />
-        </Route>
+      <Route path="/about">
+        <About />
+      </Route>
 
-        <Route path="/contact">
-          <Contact />
-        </Route>
+      <Route path="/contact">
+        <Contact />
+      </Route>
 
-        <Route path="/login">
-          <Login />
-        </Route>
+      <Route path="/signup">
+        <Signup />
+      </Route>
 
-        <Route path="/signup">
-          <Signup />
-        </Route> */}
-      </Switch>
+      <Route path="/login">
+        <Login />
+      </Route>
     </>
   );
-}
+};
 
 export default App;
