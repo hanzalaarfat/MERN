@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const routes = require("./router/auth");
 const path = require("path");
+const cookieParser = require("cookie-parser");
 
 dotenv.config({ path: "./config.env" });
 require("./db/con");
@@ -14,9 +15,9 @@ app.get("/", (req, res) => {
   res.send("hello world");
 });
 
-app.get("/about", (req, res) => {
-  res.send("about page");
-});
+// app.get("/about", (req, res) => {
+//   res.send("about page");
+// });
 app.get("/contact", (req, res) => {
   res.send("contact page");
 });
@@ -27,6 +28,7 @@ app.get("/signin", (req, res) => {
 app.get("/signup", (req, res) => {
   res.send("signup page");
 });
+app.use(cookieParser());
 app.use(routes);
 
 app.listen(process.env.PORT, () => {
